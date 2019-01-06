@@ -1,5 +1,6 @@
 package com.example.ldrp.medeasymedical;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView forgotpwdTv;
     private TextView newuserTv;
     private FirebaseAuth firebaseAuth;
-
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginbtn = findViewById(R.id.activity_login_btn);
         forgotpwdTv = findViewById(R.id.activity_login_forgot_pwd_tv);
         newuserTv = findViewById(R.id.activity_login_new_user_tv);
+        progressDialog = new ProgressDialog(LoginActivity.this);
 
 
         loginbtn.setOnClickListener(this);
@@ -70,7 +72,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         final String email = emailEd.getText().toString().trim();
         final String password = passwordEd.getText().toString().trim();
 
+        progressDialog.setTitle("Login user");
+        progressDialog.setMessage("checking auth....");
+        progressDialog.show();
+
         if (email.isEmpty() || password.isEmpty()) {
+            progressDialog.dismiss();
             Toast.makeText(this, "Please Enter details", Toast.LENGTH_SHORT).show();
         } else {
             firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -79,9 +86,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if (!task.isSuccessful()) {
+                                progressDialog.dismiss();
                                 Toast.makeText(LoginActivity.this, "Invalid Details! try Again", Toast.LENGTH_SHORT).show();
                             } else {
-
+                                progressDialog.dismiss();
+                                final Intent gotoHomeActivity = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(gotoHomeActivity);
                             }
                         }
                     });

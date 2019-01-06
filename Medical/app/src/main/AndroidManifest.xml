@@ -18,12 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/login" />
-        <activity
-            android:name=".SignupActivity"
-            android:label="@string/signup" />
+        <activity android:name=".LoginActivity"
+            android:label="@string/login"/>
+        <activity android:name=".SignupActivity"
+            android:label="@string/signup"/>
         <activity android:name=".ForgotPasswordActivity" />
         <activity
             android:name=".HomeActivity"

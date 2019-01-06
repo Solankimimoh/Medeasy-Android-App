@@ -17,24 +17,28 @@
             android:src="@drawable/medicallogo" />
 
         <EditText
+            android:id="@+id/activity_signup_name_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/name" />
 
         <EditText
+            android:id="@+id/activity_signup_email_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/email" />
 
         <EditText
+            android:id="@+id/activity_signup_password_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/password" />
 
         <EditText
+            android:id="@+id/activity_signup_mobile_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -42,6 +46,7 @@
 
 
         <EditText
+            android:id="@+id/activity_signup_address_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -49,12 +54,14 @@
 
 
         <EditText
+            android:id="@+id/activity_signup_types_stock_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/types" />
 
         <Button
+            android:id="@+id/activity_signup_signup_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -63,6 +70,7 @@
             android:textColor="@color/colorWhite" />
 
         <TextView
+            android:id="@+id/activity_signup_old_user_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
