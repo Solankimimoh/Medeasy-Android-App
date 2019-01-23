@@ -35,9 +35,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:inputType="numberPassword"
             android:hint="@string/password" />
 
         <EditText
+            android:inputType="numberDecimal"
             android:id="@+id/activity_signup_mobile_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

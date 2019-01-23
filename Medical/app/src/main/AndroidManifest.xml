@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ldrp.medeasymedical">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,10 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:label="@string/login"/>
-        <activity android:name=".SignupActivity"
-            android:label="@string/signup"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login" />
+        <activity
+            android:name=".SignupActivity"
+            android:label="@string/signup" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity
             android:name=".HomeActivity"

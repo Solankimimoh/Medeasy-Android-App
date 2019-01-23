@@ -1,6 +1,7 @@
 package com.example.ldrp.medeasymedical;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -100,6 +101,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     } else {
                         progressDialog.dismiss();
                         Toast.makeText(SignupActivity.this, "Signup Success", Toast.LENGTH_SHORT).show();
+                        final Intent gotoHomeActivity = new Intent(SignupActivity.this, HomeActivity.class);
+                        startActivity(gotoHomeActivity);
+                        finish();
                     }
                 }
             });

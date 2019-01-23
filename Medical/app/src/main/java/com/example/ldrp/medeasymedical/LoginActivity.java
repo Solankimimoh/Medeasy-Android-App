@@ -92,6 +92,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 progressDialog.dismiss();
                                 final Intent gotoHomeActivity = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(gotoHomeActivity);
+                                finish();
                             }
                         }
                     });
