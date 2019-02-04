@@ -8,6 +8,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:610233055128:android:1dcfb633217eab65",
+        "android_client_info": {
+          "package_name": "com.example.laboratory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610233055128-ra5c83qb3ctbbreju2h3jchu6g9saaat.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laboratory",
+            "certificate_hash": "ae92b59d31702c9e9aecee19a800bfbfb3a03ddc"
+          }
+        },
+        {
+          "client_id": "610233055128-7dhd920ikvdiipb4kg394n2t68ntu8p5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFZk21Uviy_mP13xbJH7xLnjNgWHgRnPc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610233055128-7dhd920ikvdiipb4kg394n2t68ntu8p5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:610233055128:android:17a4b2c8802f9afd",
         "android_client_info": {
           "package_name": "com.example.ldrp.medeasymedical"
