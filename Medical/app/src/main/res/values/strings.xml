@@ -3,7 +3,7 @@
     <string name="app_moto">The Cure Partner</string>
     <string name="email">Email</string>
     <string name="login">Login</string>
-    <string name="password">password</string>
+    <string name="password">Password</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="new_user">New user ?</string>
     <string name="title_activity_home">HomeActivity</string>
