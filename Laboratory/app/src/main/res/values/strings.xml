@@ -5,4 +5,20 @@
     <string name="login">Login</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="new_user">New user?</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="forgot_password_msg">Please Provide your email ID. we will send you reset email on your mail</string>
+
+    <string name="send_mail">Send Mail</string>
+    <string name="name">Name oF laboratory</string>
+    <string name="mobile">Contact Number Laboratory</string>
+    <string name="address">Address</string>
+    <string name="types">Service of Laboratory</string>
+    <string name="signup">Signup</string>
+    <string name="old_user">Old user</string>
 </resources>
