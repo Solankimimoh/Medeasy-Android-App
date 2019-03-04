@@ -40,9 +40,9 @@ public class LoginSelectionActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.activity_login_selection_patient_btn:
 
-//                final Intent gotoPatientLogin = new Intent(LoginSelectionActivity.this,
-//                        );
-//                startActivity(gotoPatientLogin);
+                final Intent gotoPatientLogin = new Intent(LoginSelectionActivity.this,
+                        PatientLoginActivity.class);
+                startActivity(gotoPatientLogin);
 
                 break;
         }

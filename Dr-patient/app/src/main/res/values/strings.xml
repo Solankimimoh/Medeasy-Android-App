@@ -23,5 +23,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="doctor_login">Login Doctor</string>
+    <string name="patient_login">Login Patient</string>
+    <string name="new_patient">New Patient?</string>
+    <string name="age">Age</string>
 
 </resources>

@@ -9,13 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PatientRegistrationActivity"></activity>
+        <activity
+            android:name=".PatientLoginActivity"
+            android:label="@string/patient_login" />
         <activity
             android:name=".DoctorHomeActivity"
             android:label="@string/title_activity_doctor_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".DoctorRegistrationActivity" />
-        <activity android:name=".DoctorLoginActivity" />
+        <activity
+            android:name=".DoctorLoginActivity"
+            android:label="@string/doctor_login" />
         <activity android:name=".LoginSelectionActivity" />
         <activity
             android:name=".SplashActivity"
