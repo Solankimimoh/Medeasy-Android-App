@@ -1,27 +1,17 @@
-package com.example.ldrp.medeeasyapp.doctor;
+package com.example.ldrp.medeeasyapp;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.example.ldrp.medeeasyapp.R;
-import com.example.ldrp.medeeasyapp.ViewRequestAppoinmentActivity;
 import com.example.ldrp.medeeasyapp.adapter.AppoinmentAdapter;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
+import com.example.ldrp.medeeasyapp.doctor.DoctorHomeActivity;
 import com.example.ldrp.medeeasyapp.listener.AppoinmentItemClickListener;
 import com.example.ldrp.medeeasyapp.model.AppoinmentModel;
 import com.example.ldrp.medeeasyapp.model.PatientModel;
@@ -34,10 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-
-public class DoctorHomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, AppoinmentItemClickListener {
-
+public class ViewRequestAppoinmentActivity extends AppCompatActivity implements AppoinmentItemClickListener {
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -48,22 +35,19 @@ public class DoctorHomeActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_view_request_appoinment);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
-        setupNavigationDrawer(toolbar);
 
-        recyclerView = findViewById(R.id.activity_doctor_home_appoinment_rv);
+
+        recyclerView = findViewById(R.id.activity_view_request_appoinment);
 
         appoinmentModelArrayList = new ArrayList<>();
-        appoinmentAdapter = new AppoinmentAdapter(DoctorHomeActivity.this, appoinmentModelArrayList, this);
+        appoinmentAdapter = new AppoinmentAdapter(ViewRequestAppoinmentActivity.this, appoinmentModelArrayList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setAdapter(appoinmentAdapter);
         recyclerView.setLayoutManager(layoutManager);
-
 
         databaseReference.child(AppConfig.FIREBASE_DB_APPOINMENT)
                 .child(firebaseAuth.getCurrentUser().getUid())
@@ -77,7 +61,7 @@ public class DoctorHomeActivity extends AppCompatActivity
                             Log.e("MODEL", appoinmentModelSnapshot.getRef() + "");
                             Log.e("MODEL", appoinmentModelSnapshot.getKey() + "");
 
-                            if (appoinmentModel.isStatus()) {
+                            if (!appoinmentModel.isStatus()) {
                                 databaseReference.child(AppConfig.FIREBASE_DB_PATIENT)
                                         .child(appoinmentModelSnapshot.getKey())
                                         .addValueEventListener(new ValueEventListener() {
@@ -85,6 +69,7 @@ public class DoctorHomeActivity extends AppCompatActivity
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                                                 PatientModel patientModel = dataSnapshot.getValue(PatientModel.class);
+                                                patientModel.setUuid(dataSnapshot.getKey());
                                                 appoinmentModel.setPatientModel(patientModel);
                                                 Log.e("MODEL", appoinmentModel.getRemarks() + appoinmentModel.getPatientModel().getAddress() + "");
                                                 appoinmentModelArrayList.add(appoinmentModel);
@@ -110,76 +95,62 @@ public class DoctorHomeActivity extends AppCompatActivity
 
     }
 
-    private void setupNavigationDrawer(Toolbar toolbar) {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
-
     @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+    public void onAppoinmentItemClick(final AppoinmentModel appoinmentModel) {
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.doctor_home, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        AlertDialog.Builder builder = new AlertDialog.Builder(ViewRequestAppoinmentActivity.this);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
-        return super.onOptionsItemSelected(item);
-    }
+        builder.setTitle("Booking Confirmation");
+        builder.setMessage("Are you sure want to Accept");
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_appoinment) {
-            final Intent gotoViewRequestAppoinmentActivity = new Intent(DoctorHomeActivity.this,
-                    ViewRequestAppoinmentActivity.class);
-            startActivity(gotoViewRequestAppoinmentActivity);
-        } else if (id == R.id.nav_reminder) {
+        builder.setPositiveButton("ACCEPT", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                databaseReference.child(AppConfig.FIREBASE_DB_APPOINMENT)
+                        .child(firebaseAuth.getCurrentUser().getUid())
+                        .addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                appoinmentModelArrayList.clear();
+                                for (DataSnapshot appoinmentModelSnapshot : dataSnapshot.getChildren()) {
 
-        } else if (id == R.id.nav_upload_prescription) {
+                                    AppoinmentModel appoinmentModel1 = appoinmentModelSnapshot.getValue(AppoinmentModel.class);
 
-        } else if (id == R.id.nav_logout) {
 
-        }
+                                    if (appoinmentModelSnapshot.getKey().equals(appoinmentModel.getPatientModel().getUuid())) {
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+                                        appoinmentModelSnapshot.getRef()
+                                                .child("status").setValue(true);
 
-    @Override
-    public void onAppoinmentItemClick(AppoinmentModel appoinmentModel) {
+                                    }
+
+                                }
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+            }
+        });
+
+
+        builder.setNegativeButton("DECLINE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        builder.show();
+
+
 
     }
 }

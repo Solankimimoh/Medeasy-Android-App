@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ViewRequestAppoinmentActivity"></activity>
+        <activity android:name=".patient.BookAppoinmentActivity" />
         <activity
             android:name=".PatientHomeActivity"
             android:label="@string/title_activity_patient_home"
@@ -20,22 +22,22 @@
         <activity
             android:name=".doctor.DoctorHomeActivity"
             android:label="@string/title_activity_doctor_home"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".doctor.DoctorRegistrationActivity" />
         <activity
             android:name=".doctor.DoctorLoginActivity"
             android:label="@string/doctor_login" />
-        <activity android:name=".LoginSelectionActivity" />
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".LoginSelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

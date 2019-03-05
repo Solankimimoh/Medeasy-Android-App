@@ -2,6 +2,7 @@ package com.example.ldrp.medeeasyapp.model;
 
 public class PatientModel {
 
+    private String uuid;
     private String name;
     private String email;
     private String password;
@@ -14,6 +15,24 @@ public class PatientModel {
     }
 
     public PatientModel(String name, String email, String password, String mobile, String address, String age) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.mobile = mobile;
+        this.address = address;
+        this.age = age;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public PatientModel(String uuid, String name, String email, String password, String mobile, String address, String age) {
+        this.uuid = uuid;
         this.name = name;
         this.email = email;
         this.password = password;

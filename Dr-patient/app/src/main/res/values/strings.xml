@@ -28,5 +28,10 @@
     <string name="new_patient">New Patient?</string>
     <string name="age">Age</string>
     <string name="title_activity_patient_home">PatientHomeActivity</string>
+    <string name="purpose">Purpose</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="remarks">Remarks</string>
+    <string name="book">Book</string>
 
 </resources>

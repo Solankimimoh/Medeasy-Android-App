@@ -1,8 +1,13 @@
 package com.example.ldrp.medeeasyapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,16 +17,79 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.example.ldrp.medeeasyapp.adapter.DoctorListAdapter;
+import com.example.ldrp.medeeasyapp.app.AppConfig;
+import com.example.ldrp.medeeasyapp.listener.DoctorItemClickListener;
+import com.example.ldrp.medeeasyapp.model.DoctorModel;
+import com.example.ldrp.medeeasyapp.patient.BookAppoinmentActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class PatientHomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, DoctorItemClickListener {
+
+    private ArrayList<DoctorModel> doctorModelArrayList;
+    private DoctorListAdapter doctorListAdapter;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private RecyclerView recyclerView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
+        initView();
+        setupNavigationDrawer();
+
+
+        doctorModelArrayList = new ArrayList<>();
+        doctorListAdapter = new DoctorListAdapter(PatientHomeActivity.this,
+                doctorModelArrayList, this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setAdapter(doctorListAdapter);
+        recyclerView.setLayoutManager(layoutManager);
+
+
+        databaseReference.child(AppConfig.FIREBASE_DB_DOCTOR).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot doctorModelSnapshot : dataSnapshot.getChildren()) {
+                    DoctorModel doctorModel = doctorModelSnapshot.getValue(DoctorModel.class);
+                    doctorModel.setUid(doctorModelSnapshot.getKey());
+                    doctorModelArrayList.add(doctorModel);
+                }
+                doctorListAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
+    private void setupNavigationDrawer() {
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -31,6 +99,10 @@ public class PatientHomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void initView() {
+        recyclerView = findViewById(R.id.activity_patient_home_doctor_rv);
     }
 
     @Override
@@ -92,5 +164,16 @@ public class PatientHomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onDoctorItemClick(DoctorModel doctorModel) {
+
+        final Intent gotoBookAppointment = new Intent(PatientHomeActivity.this,
+                BookAppoinmentActivity.class);
+        gotoBookAppointment.putExtra(AppConfig.KEY_DOCTOR_UID,doctorModel.getUid());
+        startActivity(gotoBookAppointment);
+
+
     }
 }
