@@ -1,16 +1,20 @@
-package com.example.ldrp.medeeasyapp;
+package com.example.ldrp.medeeasyapp.patient;
+
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ldrp.medeeasyapp.ForgotPasswordActivity;
+import com.example.ldrp.medeeasyapp.PatientHomeActivity;
+import com.example.ldrp.medeeasyapp.R;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,7 +31,7 @@ public class PatientLoginActivity extends AppCompatActivity implements View.OnCl
 
     private EditText emailEd;
     private EditText passwordEd;
-    private Button loginBtn;
+    private Button patientloginBtn;
     private TextView newUserTv;
     private TextView forgotPasswordTv;
 
@@ -41,7 +45,7 @@ public class PatientLoginActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_login);
+        setContentView(R.layout.activity_patient_login);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
@@ -54,13 +58,13 @@ public class PatientLoginActivity extends AppCompatActivity implements View.OnCl
 
         emailEd = findViewById(R.id.actvitiy_patient_login_email_ed);
         passwordEd = findViewById(R.id.actvitiy_patient_login_password_ed);
-        loginBtn = findViewById(R.id.actvitiy_patient_login_btn);
+        patientloginBtn = findViewById(R.id.actvitiy_patient_btn);
         newUserTv = findViewById(R.id.actvitiy_patient_login_new_patient_tv);
         forgotPasswordTv = findViewById(R.id.actvitiy_patient_login_forgot_pwd_tv);
 
         progressDialog = new ProgressDialog(PatientLoginActivity.this);
 
-        loginBtn.setOnClickListener(this);
+        patientloginBtn.setOnClickListener(this);
         newUserTv.setOnClickListener(this);
         forgotPasswordTv.setOnClickListener(this);
 
@@ -74,7 +78,7 @@ public class PatientLoginActivity extends AppCompatActivity implements View.OnCl
                 final Intent gotoNewUser = new Intent(PatientLoginActivity.this, PatientRegistrationActivity.class);
                 startActivity(gotoNewUser);
                 break;
-            case R.id.actvitiy_patient_login_btn:
+            case R.id.actvitiy_patient_btn:
                 patientLogin();
                 break;
             case R.id.actvitiy_patient_login_forgot_pwd_tv:
@@ -123,6 +127,11 @@ public class PatientLoginActivity extends AppCompatActivity implements View.OnCl
                 if (dataSnapshot.exists()) {
                     progressDialog.dismiss();
                     Toast.makeText(PatientLoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+
+                    final Intent gotoPatientHome = new Intent(PatientLoginActivity.this,
+                            PatientHomeActivity.class);
+                    startActivity(gotoPatientHome);
+
                 } else {
                     progressDialog.dismiss();
                     Toast.makeText(PatientLoginActivity.this, "Not Right User to Login", Toast.LENGTH_SHORT).show();

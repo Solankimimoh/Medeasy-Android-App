@@ -1,4 +1,4 @@
-package com.example.ldrp.medeeasyapp;
+package com.example.ldrp.medeeasyapp.doctor;
 
 import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ldrp.medeeasyapp.R;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
 import com.example.ldrp.medeeasyapp.model.DoctorModel;
 import com.google.android.gms.tasks.OnCompleteListener;

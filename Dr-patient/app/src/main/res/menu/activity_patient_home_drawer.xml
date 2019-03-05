@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_patient_home"
+            android:icon="@drawable/icon_home"
+            android:title="HOME" />
+
+        <item
+            android:id="@+id/nav_patient_book_appoinemnt"
+            android:icon="@drawable/icon_appoinment"
+            android:title="Gallery" />
+
+        <item
+            android:id="@+id/nav_patient_book_pr"
+            android:icon="@drawable/icon_prescription"
+            android:title="Prescription - Review" />
+
+        <item
+            android:id="@+id/nav_patient_lab_report"
+            android:icon="@drawable/icon_prescription"
+            android:title="View Lab Repor" />
+
+        <item
+            android:id="@+id/nav_patient_medical"
+            android:icon="@drawable/icon_medical"
+            android:title="Request Medical" />
+
+        <item
+            android:id="@+id/nav_patient_laboratory"
+            android:icon="@drawable/icon_medical"
+            android:title="Reqest laboratory" />
+
+        <item
+            android:id="@+id/nav_patient_quick_medicine"
+            android:icon="@drawable/icon_medical"
+            android:title="Quick Medicine" />
+
+        <item
+            android:id="@+id/nav_patient_logout"
+            android:icon="@drawable/icon_logout"
+            android:title="Logout" />
+
+
+    </group>
+
+
+</menu>

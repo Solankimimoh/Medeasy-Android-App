@@ -27,5 +27,6 @@
     <string name="patient_login">Login Patient</string>
     <string name="new_patient">New Patient?</string>
     <string name="age">Age</string>
+    <string name="title_activity_patient_home">PatientHomeActivity</string>
 
 </resources>

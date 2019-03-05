@@ -1,4 +1,4 @@
-package com.example.ldrp.medeeasyapp;
+package com.example.ldrp.medeeasyapp.doctor;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ldrp.medeeasyapp.ForgotPasswordActivity;
+import com.example.ldrp.medeeasyapp.R;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
+import com.example.ldrp.medeeasyapp.patient.PatientLoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -122,6 +125,8 @@ public class DoctorLoginActivity extends AppCompatActivity implements View.OnCli
                 if (dataSnapshot.exists()) {
                     progressDialog.dismiss();
                     Toast.makeText(DoctorLoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                    final Intent gotoDoctorHome = new Intent(DoctorLoginActivity.this, DoctorHomeActivity.class);
+                    startActivity(gotoDoctorHome);
                 } else {
                     progressDialog.dismiss();
                     Toast.makeText(DoctorLoginActivity.this, "Not Right User to Login", Toast.LENGTH_SHORT).show();

@@ -13,24 +13,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DoctorHomeActivity extends AppCompatActivity
+public class PatientHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_home);
+        setContentView(R.layout.activity_patient_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -55,7 +46,7 @@ public class DoctorHomeActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.doctor_home, menu);
+        getMenuInflater().inflate(R.menu.patient_home, menu);
         return true;
     }
 
@@ -80,17 +71,21 @@ public class DoctorHomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_patient_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_patient_book_appoinemnt) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_patient_book_pr) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_patient_lab_report) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_patient_medical) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_patient_laboratory) {
+
+        } else if (id == R.id.nav_patient_quick_medicine) {
+
+        } else if (id == R.id.nav_patient_logout) {
 
         }
 

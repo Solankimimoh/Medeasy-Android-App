@@ -33,7 +33,7 @@
             android:inputType="numberPassword" />
 
         <Button
-            android:id="@+id/actvitiy_patient_login_btn"
+            android:id="@+id/actvitiy_patient_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
