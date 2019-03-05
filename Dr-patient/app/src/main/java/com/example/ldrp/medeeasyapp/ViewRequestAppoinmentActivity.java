@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.example.ldrp.medeeasyapp.adapter.AppoinmentAdapter;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
@@ -96,7 +97,7 @@ public class ViewRequestAppoinmentActivity extends AppCompatActivity implements 
     }
 
     @Override
-    public void onAppoinmentItemClick(final AppoinmentModel appoinmentModel) {
+    public void onAppoinmentItemClick(final AppoinmentModel appoinmentModel,View view) {
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ViewRequestAppoinmentActivity.this);
@@ -153,4 +154,5 @@ public class ViewRequestAppoinmentActivity extends AppCompatActivity implements 
 
 
     }
+
 }

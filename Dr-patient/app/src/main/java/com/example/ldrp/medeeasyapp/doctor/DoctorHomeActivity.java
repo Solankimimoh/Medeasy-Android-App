@@ -17,6 +17,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.example.ldrp.medeeasyapp.R;
 import com.example.ldrp.medeeasyapp.ViewRequestAppoinmentActivity;
@@ -85,6 +87,7 @@ public class DoctorHomeActivity extends AppCompatActivity
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                                                 PatientModel patientModel = dataSnapshot.getValue(PatientModel.class);
+                                                patientModel.setUuid(dataSnapshot.getKey());
                                                 appoinmentModel.setPatientModel(patientModel);
                                                 Log.e("MODEL", appoinmentModel.getRemarks() + appoinmentModel.getPatientModel().getAddress() + "");
                                                 appoinmentModelArrayList.add(appoinmentModel);
@@ -179,7 +182,36 @@ public class DoctorHomeActivity extends AppCompatActivity
     }
 
     @Override
-    public void onAppoinmentItemClick(AppoinmentModel appoinmentModel) {
+    public void onAppoinmentItemClick(final AppoinmentModel appoinmentModel, View view) {
+
+
+        PopupMenu popup = new PopupMenu(DoctorHomeActivity.this, view);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+
+        popup.show();
+
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.popup_report:
+                        final Intent gotoReportView = new Intent(DoctorHomeActivity.this,
+                                );
+                        gotoReportView.putExtra(AppConfig.KEY_PATIENT_UID, appoinmentModel.getPatientModel().getUuid());
+                        break;
+                    case R.id.popup_prescription:
+
+                        final Intent gotoPrescriptionView = new Intent(DoctorHomeActivity.this,
+                                );
+                        gotoPrescriptionView.putExtra(AppConfig.KEY_PATIENT_UID, appoinmentModel.getPatientModel().getUuid());
+                        break;
+                        break;
+                }
+                return true;
+            }
+        });
+
 
     }
 }

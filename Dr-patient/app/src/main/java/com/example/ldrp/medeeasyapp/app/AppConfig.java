@@ -12,4 +12,5 @@ public class AppConfig {
 
 //    KEY
     public static final String KEY_DOCTOR_UID = "doctor_uid";
+    public static final String KEY_PATIENT_UID = "patient_uid";
 }

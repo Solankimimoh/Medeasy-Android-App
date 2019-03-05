@@ -33,5 +33,7 @@
     <string name="time">Time</string>
     <string name="remarks">Remarks</string>
     <string name="book">Book</string>
+    <string name="report">Report</string>
+    <string name="prescription">Prescription</string>
 
 </resources>

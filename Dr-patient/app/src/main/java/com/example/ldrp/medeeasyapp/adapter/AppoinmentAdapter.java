@@ -67,7 +67,7 @@ public class AppoinmentAdapter extends RecyclerView.Adapter<AppoinmentAdapter.My
         @Override
         public void onClick(View v) {
             if (appoinmentItemClickListener != null) {
-                appoinmentItemClickListener.onAppoinmentItemClick(appoinmentModel);
+                appoinmentItemClickListener.onAppoinmentItemClick(appoinmentModel, v);
             }
         }
     }
