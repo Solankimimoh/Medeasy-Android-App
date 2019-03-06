@@ -13,9 +13,9 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:contentDescription="@null"
             android:padding="30dp"
-            android:src="@drawable/medicallogo"
-            android:contentDescription="@null" />
+            android:src="@drawable/medicallogo" />
 
         <EditText
             android:id="@+id/activity_signup_name_ed"
@@ -36,20 +36,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:inputType="numberPassword"
-            android:hint="@string/password" />
+            android:hint="@string/password"
+            android:inputType="numberPassword" />
 
         <EditText
-            android:inputType="numberDecimal"
             android:id="@+id/activity_signup_mobile_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="@string/mobile" />
+            android:hint="@string/mobile"
+            android:inputType="numberDecimal" />
 
 
         <EditText
             android:id="@+id/activity_signup_address_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/address" />
+
+        <EditText
+            android:id="@+id/activity_signup_license_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

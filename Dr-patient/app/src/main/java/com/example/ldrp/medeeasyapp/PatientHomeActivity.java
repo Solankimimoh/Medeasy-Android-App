@@ -151,7 +151,8 @@ public class PatientHomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_patient_lab_report) {
 
         } else if (id == R.id.nav_patient_medical) {
-
+            final Intent gotoMedicalList = new Intent(PatientHomeActivity.this, MedicalListActivity.class);
+            startActivity(gotoMedicalList);
         } else if (id == R.id.nav_patient_laboratory) {
 
         } else if (id == R.id.nav_patient_quick_medicine) {

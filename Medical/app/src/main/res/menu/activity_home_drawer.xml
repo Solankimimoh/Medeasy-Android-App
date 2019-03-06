@@ -4,14 +4,7 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/icon_medicin_request"
-            android:title="View Medicine Request" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/icon_medicine_history"
-            android:title="History" />
+
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/icon_logout"

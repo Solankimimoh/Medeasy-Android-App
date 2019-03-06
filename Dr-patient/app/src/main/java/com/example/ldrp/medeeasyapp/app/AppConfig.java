@@ -9,6 +9,8 @@ public class AppConfig {
     public static final String FIREBASE_DB_PATIENT_REMINDER = "patient-reminder";
     public static final String FIREBASE_DB_PRESCRIPTION = "prescription";
     public static final String FIREBASE_DB_REPORT = "report";
+    public static final String FIREBASE_DB_MEDICAL = "medical";
+    public static final String FIREBASE_DB_REQUEST_MEDICINE = "request-medicine";
 
 
 

@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "610233055128",
-    "firebase_url": "https://medeasy-67a05.firebaseio.com",
-    "project_id": "medeasy-67a05",
-    "storage_bucket": "medeasy-67a05.appspot.com"
+    "project_number": "531422169207",
+    "firebase_url": "https://emj1-493bc.firebaseio.com",
+    "project_id": "emj1-493bc",
+    "storage_bucket": "emj1-493bc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:610233055128:android:17a4b2c8802f9afd",
+        "mobilesdk_app_id": "1:531422169207:android:1dcfb633217eab65",
         "android_client_info": {
-          "package_name": "com.example.ldrp.medeasymedical"
+          "package_name": "com.example.laboratory"
         }
       },
       "oauth_client": [
         {
-          "client_id": "610233055128-af73477uhjm0rm9caev276oqf7v4vefq.apps.googleusercontent.com",
+          "client_id": "531422169207-4uldiu33nmitor3801iedd60aj3hlc7d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.ldrp.medeasymedical",
+            "package_name": "com.example.laboratory",
             "certificate_hash": "ae92b59d31702c9e9aecee19a800bfbfb3a03ddc"
           }
         },
         {
-          "client_id": "610233055128-7dhd920ikvdiipb4kg394n2t68ntu8p5.apps.googleusercontent.com",
+          "client_id": "531422169207-latpg46q0hkldg0fvkfjjdjko0t2gt00.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBFZk21Uviy_mP13xbJH7xLnjNgWHgRnPc"
+          "current_key": "AIzaSyCvkrpm35HP6RxcYx5-EO8yWkaNXTBXiQ4"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "610233055128-7dhd920ikvdiipb4kg394n2t68ntu8p5.apps.googleusercontent.com",
+              "client_id": "531422169207-latpg46q0hkldg0fvkfjjdjko0t2gt00.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -52,28 +52,28 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:610233055128:android:39ad8403685321d9",
+        "mobilesdk_app_id": "1:531422169207:android:17a4b2c8802f9afd",
         "android_client_info": {
-          "package_name": "com.example.ldrp.medeeasyapp"
+          "package_name": "com.example.ldrp.medeasymedical"
         }
       },
       "oauth_client": [
         {
-          "client_id": "610233055128-5nul1l9smjqhuvnfbmc1a95jtpajuhse.apps.googleusercontent.com",
+          "client_id": "531422169207-ef97mtp8t8da7s9v1r1kugjgkpu6g2eq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.ldrp.medeeasyapp",
+            "package_name": "com.example.ldrp.medeasymedical",
             "certificate_hash": "ae92b59d31702c9e9aecee19a800bfbfb3a03ddc"
           }
         },
         {
-          "client_id": "610233055128-7dhd920ikvdiipb4kg394n2t68ntu8p5.apps.googleusercontent.com",
+          "client_id": "531422169207-latpg46q0hkldg0fvkfjjdjko0t2gt00.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBFZk21Uviy_mP13xbJH7xLnjNgWHgRnPc"
+          "current_key": "AIzaSyCvkrpm35HP6RxcYx5-EO8yWkaNXTBXiQ4"
         }
       ],
       "services": {
@@ -84,7 +84,51 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "610233055128-7dhd920ikvdiipb4kg394n2t68ntu8p5.apps.googleusercontent.com",
+              "client_id": "531422169207-latpg46q0hkldg0fvkfjjdjko0t2gt00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531422169207:android:39ad8403685321d9",
+        "android_client_info": {
+          "package_name": "com.example.ldrp.medeeasyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531422169207-v2kni50rgj52ntbr0tc5hc17k4bc0vcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ldrp.medeeasyapp",
+            "certificate_hash": "ae92b59d31702c9e9aecee19a800bfbfb3a03ddc"
+          }
+        },
+        {
+          "client_id": "531422169207-latpg46q0hkldg0fvkfjjdjko0t2gt00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvkrpm35HP6RxcYx5-EO8yWkaNXTBXiQ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531422169207-latpg46q0hkldg0fvkfjjdjko0t2gt00.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

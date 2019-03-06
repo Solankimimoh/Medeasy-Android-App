@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BasicDiseasesListActivity"></activity>
+        <activity android:name=".SendMedicineRequestActivity"></activity>
+        <activity android:name=".MedicalListActivity" />
+        <activity android:name=".BasicDiseasesListActivity" />
         <activity android:name=".PatientReminderActivity" />
         <activity android:name=".PatientPrescriptionViewActivity" />
         <activity android:name=".PatientReportViewActivity" />
