@@ -34,11 +34,15 @@ public class ReminderListAdapter extends RecyclerView.Adapter<ReminderListAdapte
         private ReminderModel reminderModel;
         private TextView titleTv;
         private TextView descriptionTv;
+        private TextView timeTv;
+        private TextView dateTv;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTv = itemView.findViewById(R.id.row_layout_reminder_title);
             descriptionTv = itemView.findViewById(R.id.row_layout_reminder_description);
+            timeTv = itemView.findViewById(R.id.row_layout_reminder_time);
+            dateTv = itemView.findViewById(R.id.row_layout_reminder_date);
 
             itemView.setOnClickListener(this);
         }
@@ -47,6 +51,8 @@ public class ReminderListAdapter extends RecyclerView.Adapter<ReminderListAdapte
             reminderModel = data;
             titleTv.setText(data.getTitle());
             descriptionTv.setText(data.getDescription());
+            timeTv.setText(data.getTime());
+            dateTv.setText(data.getDate());
         }
 
         @Override

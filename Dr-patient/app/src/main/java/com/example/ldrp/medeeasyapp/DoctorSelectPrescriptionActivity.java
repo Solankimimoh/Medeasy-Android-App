@@ -1,16 +1,22 @@
 package com.example.ldrp.medeeasyapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.example.ldrp.medeeasyapp.adapter.DoctorListAdapter;
 import com.example.ldrp.medeeasyapp.adapter.ReminderListAdapter;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
+import com.example.ldrp.medeeasyapp.doctor.DoctorHomeActivity;
 import com.example.ldrp.medeeasyapp.listener.DoctorItemClickListener;
 import com.example.ldrp.medeeasyapp.model.DoctorModel;
 import com.example.ldrp.medeeasyapp.model.ReminderModel;
@@ -72,7 +78,11 @@ public class DoctorSelectPrescriptionActivity extends AppCompatActivity implemen
                                             .addValueEventListener(new ValueEventListener() {
                                                 @Override
                                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                    Log.e("OK", dataSnapshot.getValue() + "");
+                                                    DoctorModel doctorModel = dataSnapshot.getValue(DoctorModel.class);
+                                                    doctorModel.setUid(dataSnapshot.getKey());
+                                                    doctorModelArrayList.add(doctorModel);
+                                                    doctorListAdapter.notifyDataSetChanged();
+
                                                 }
 
                                                 @Override
@@ -99,7 +109,37 @@ public class DoctorSelectPrescriptionActivity extends AppCompatActivity implemen
     }
 
     @Override
-    public void onDoctorItemClick(DoctorModel doctorModel) {
+    public void onDoctorItemClick(final DoctorModel doctorModel, View view) {
+        PopupMenu popup = new PopupMenu(DoctorSelectPrescriptionActivity.this, view);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+
+        popup.show();
+
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.popup_report:
+
+                        Toast.makeText(DoctorSelectPrescriptionActivity.this, "" + doctorModel.getUid(), Toast.LENGTH_SHORT).show();
+
+                        final Intent gotoReportView = new Intent(DoctorSelectPrescriptionActivity.this,
+                                PatientReportViewActivity.class);
+                        gotoReportView.putExtra(AppConfig.KEY_DOCTOR_UID, doctorModel.getUid());
+
+                        startActivity(gotoReportView);
+                        break;
+                    case R.id.popup_prescription:
+                        final Intent gotoPrescriptionView = new Intent(DoctorSelectPrescriptionActivity.this,
+                                PatientPrescriptionViewActivity.class);
+                        gotoPrescriptionView.putExtra(AppConfig.KEY_DOCTOR_UID, doctorModel.getUid());
+                        startActivity(gotoPrescriptionView);
+                        break;
+                }
+                return true;
+            }
+        });
 
     }
 }

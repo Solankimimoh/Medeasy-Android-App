@@ -146,7 +146,6 @@ public class PatientHomeActivity extends AppCompatActivity
         if (id == R.id.nav_patient_home) {
             // Handle the camera action
         } else if (id == R.id.nav_patient_book_prescription) {
-
             final Intent gotoDoctorSelect = new Intent(PatientHomeActivity.this, DoctorSelectPrescriptionActivity.class);
             startActivity(gotoDoctorSelect);
         } else if (id == R.id.nav_patient_lab_report) {
@@ -156,9 +155,14 @@ public class PatientHomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_patient_laboratory) {
 
         } else if (id == R.id.nav_patient_quick_medicine) {
+            final Intent gotoBasicList = new Intent(PatientHomeActivity.this, BasicDiseasesListActivity.class);
+            startActivity(gotoBasicList);
 
         } else if (id == R.id.nav_patient_logout) {
 
+        } else if (id == R.id.nav_patient_book_reminder) {
+            final Intent gotoReminder = new Intent(PatientHomeActivity.this, PatientReminderActivity.class);
+            startActivity(gotoReminder);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -167,7 +171,7 @@ public class PatientHomeActivity extends AppCompatActivity
     }
 
     @Override
-    public void onDoctorItemClick(DoctorModel doctorModel) {
+    public void onDoctorItemClick(DoctorModel doctorModel,View view) {
 
         final Intent gotoBookAppointment = new Intent(PatientHomeActivity.this,
                 BookAppoinmentActivity.class);

@@ -63,7 +63,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.My
         @Override
         public void onClick(View v) {
             if (doctorItemClickListener != null) {
-                doctorItemClickListener.onDoctorItemClick(doctorModel);
+                doctorItemClickListener.onDoctorItemClick(doctorModel,v);
             }
         }
     }

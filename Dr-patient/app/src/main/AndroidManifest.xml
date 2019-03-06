@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DoctorSelectPrescriptionActivity"></activity>
+        <activity android:name=".BasicDiseasesListActivity"></activity>
+        <activity android:name=".PatientReminderActivity" />
+        <activity android:name=".PatientPrescriptionViewActivity" />
+        <activity android:name=".PatientReportViewActivity" />
+        <activity android:name=".DoctorSelectPrescriptionActivity" />
         <activity android:name=".DoctorReminderActivity" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".PresciptionActivity" />

@@ -6,6 +6,7 @@ public class AppConfig {
     public static final String FIREBASE_DB_PATIENT = "patient";
     public static final String FIREBASE_DB_APPOINMENT = "appoinment";
     public static final String FIREBASE_DB_DOCTOR_REMINDER = "doctor-reminder";
+    public static final String FIREBASE_DB_PATIENT_REMINDER = "patient-reminder";
     public static final String FIREBASE_DB_PRESCRIPTION = "prescription";
     public static final String FIREBASE_DB_REPORT = "report";
 

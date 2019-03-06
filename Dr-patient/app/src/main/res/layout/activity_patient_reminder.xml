@@ -15,7 +15,7 @@
         tools:context=".PresciptionActivity">
 
         <EditText
-            android:id="@+id/activity_doctor_reminder_title"
+            android:id="@+id/activity_patient_reminder_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -23,13 +23,15 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/activity_doctor_reminder_description"
+            android:id="@+id/activity_patient_reminder_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:hint="@string/instruction" />
+
+
         <TextView
-            android:id="@+id/activity_doctor_reminder_date"
+            android:id="@+id/activity_patient_reminder_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -40,7 +42,7 @@
             android:textColor="@color/colorAccent" />
 
         <TextView
-            android:id="@+id/activity_doctor_reminder_time"
+            android:id="@+id/activity_patient_reminder_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -51,16 +53,15 @@
             android:textColor="@color/colorAccent" />
 
 
-
         <Button
-            android:id="@+id/activity_doctor_reminder_btn"
+            android:id="@+id/activity_patient_reminder_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/reminder" />
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/activity_doctor_reminder_rv"
+            android:id="@+id/activity_patient_reminder_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/row_layout_reminder" />
