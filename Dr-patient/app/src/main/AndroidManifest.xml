@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ldrp.medeeasyapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewRequestAppoinmentActivity"></activity>
+        <activity android:name=".DoctorSelectPrescriptionActivity"></activity>
+        <activity android:name=".DoctorReminderActivity" />
+        <activity android:name=".ReportActivity" />
+        <activity android:name=".PresciptionActivity" />
+        <activity android:name=".ViewRequestAppoinmentActivity" />
         <activity android:name=".patient.BookAppoinmentActivity" />
         <activity
             android:name=".PatientHomeActivity"
             android:label="@string/title_activity_patient_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".patient.PatientRegistrationActivity" />
         <activity
             android:name=".patient.PatientLoginActivity"
@@ -22,7 +30,7 @@
         <activity
             android:name=".doctor.DoctorHomeActivity"
             android:label="@string/title_activity_doctor_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".doctor.DoctorRegistrationActivity" />
         <activity

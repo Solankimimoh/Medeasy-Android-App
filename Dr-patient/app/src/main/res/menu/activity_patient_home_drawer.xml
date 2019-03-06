@@ -10,14 +10,10 @@
             android:title="HOME" />
 
         <item
-            android:id="@+id/nav_patient_book_appoinemnt"
-            android:icon="@drawable/icon_appoinment"
-            android:title="Gallery" />
-
-        <item
-            android:id="@+id/nav_patient_book_pr"
+            android:id="@+id/nav_patient_book_prescription"
             android:icon="@drawable/icon_prescription"
-            android:title="Prescription - Review" />
+            android:title="Prescription - Report" />
+
 
         <item
             android:id="@+id/nav_patient_lab_report"

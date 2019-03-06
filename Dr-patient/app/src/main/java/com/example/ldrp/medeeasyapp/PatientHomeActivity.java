@@ -145,10 +145,10 @@ public class PatientHomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_patient_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_patient_book_appoinemnt) {
+        } else if (id == R.id.nav_patient_book_prescription) {
 
-        } else if (id == R.id.nav_patient_book_pr) {
-
+            final Intent gotoDoctorSelect = new Intent(PatientHomeActivity.this, DoctorSelectPrescriptionActivity.class);
+            startActivity(gotoDoctorSelect);
         } else if (id == R.id.nav_patient_lab_report) {
 
         } else if (id == R.id.nav_patient_medical) {
@@ -171,7 +171,7 @@ public class PatientHomeActivity extends AppCompatActivity
 
         final Intent gotoBookAppointment = new Intent(PatientHomeActivity.this,
                 BookAppoinmentActivity.class);
-        gotoBookAppointment.putExtra(AppConfig.KEY_DOCTOR_UID,doctorModel.getUid());
+        gotoBookAppointment.putExtra(AppConfig.KEY_DOCTOR_UID, doctorModel.getUid());
         startActivity(gotoBookAppointment);
 
 

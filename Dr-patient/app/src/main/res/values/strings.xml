@@ -35,5 +35,11 @@
     <string name="book">Book</string>
     <string name="report">Report</string>
     <string name="prescription">Prescription</string>
+    <string name="prescription_title">Title</string>
+    <string name="instruction">Instruction</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="upload">Upload</string>
+    <string name="add">Add</string>
+    <string name="reminder">Set Reminder</string>
 
 </resources>

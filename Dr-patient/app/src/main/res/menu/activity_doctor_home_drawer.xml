@@ -12,10 +12,7 @@
             android:id="@+id/nav_appoinment"
             android:icon="@drawable/icon_appoinment"
             android:title="Appoinment Request" />
-        <item
-            android:id="@+id/nav_upload_prescription"
-            android:icon="@drawable/icon_prescription"
-            android:title="Upload Prescription" />
+
         <item
             android:id="@+id/nav_reminder"
             android:icon="@drawable/icon_reminder"

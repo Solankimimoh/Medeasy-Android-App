@@ -20,7 +20,10 @@ import android.view.MenuItem;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.ldrp.medeeasyapp.DoctorReminderActivity;
+import com.example.ldrp.medeeasyapp.PresciptionActivity;
 import com.example.ldrp.medeeasyapp.R;
+import com.example.ldrp.medeeasyapp.ReportActivity;
 import com.example.ldrp.medeeasyapp.ViewRequestAppoinmentActivity;
 import com.example.ldrp.medeeasyapp.adapter.AppoinmentAdapter;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
@@ -169,10 +172,12 @@ public class DoctorHomeActivity extends AppCompatActivity
                     ViewRequestAppoinmentActivity.class);
             startActivity(gotoViewRequestAppoinmentActivity);
         } else if (id == R.id.nav_reminder) {
-
-        } else if (id == R.id.nav_upload_prescription) {
-
+            final Intent gotoDoctorReminder = new Intent(DoctorHomeActivity.this,
+                    DoctorReminderActivity.class);
+            startActivity(gotoDoctorReminder);
         } else if (id == R.id.nav_logout) {
+            firebaseAuth.signOut();
+            finish();
 
         }
 
@@ -197,15 +202,16 @@ public class DoctorHomeActivity extends AppCompatActivity
                 switch (item.getItemId()) {
                     case R.id.popup_report:
                         final Intent gotoReportView = new Intent(DoctorHomeActivity.this,
-                                );
+                                ReportActivity.class);
                         gotoReportView.putExtra(AppConfig.KEY_PATIENT_UID, appoinmentModel.getPatientModel().getUuid());
+
+                        startActivity(gotoReportView);
                         break;
                     case R.id.popup_prescription:
-
                         final Intent gotoPrescriptionView = new Intent(DoctorHomeActivity.this,
-                                );
+                                PresciptionActivity.class);
                         gotoPrescriptionView.putExtra(AppConfig.KEY_PATIENT_UID, appoinmentModel.getPatientModel().getUuid());
-                        break;
+                        startActivity(gotoPrescriptionView);
                         break;
                 }
                 return true;
