@@ -55,6 +55,13 @@
             android:layout_margin="10dp"
             android:hint="@string/address" />
 
+        <EditText
+            android:id="@+id/activity_signup_license_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/license" />
+
 
         <EditText
             android:id="@+id/activity_signup_types_stock_ed"

@@ -4,14 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".HomeActivity"
-    tools:showIn="@layout/app_bar_home">
+    tools:context=".LaboratoryListActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/activity_home_medicine_list_rv"
+        android:id="@+id/activity_laboratory_list_rv"
         android:layout_width="match_parent"
-        tools:listitem="@layout/row_layout_medicine"
         android:layout_height="match_parent" />
 
 

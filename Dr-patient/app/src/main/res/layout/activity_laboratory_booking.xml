@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".patient.BookAppoinmentActivity">
+
+    <EditText
+        android:id="@+id/activity_laboratory_booking_purpose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/purpose"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/activity_laboratory_booking_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?attr/editTextBackground"
+        android:gravity="center_vertical"
+        android:hint="@string/date"
+        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/activity_laboratory_booking_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?attr/editTextBackground"
+        android:gravity="center_vertical"
+        android:hint="@string/time"
+        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+        android:textColor="@color/colorAccent" />
+
+    <EditText
+        android:id="@+id/activity_laboratory_booking_remarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/remarks"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/activity_laboratory_booking_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/book" />
+
+
+</LinearLayout>

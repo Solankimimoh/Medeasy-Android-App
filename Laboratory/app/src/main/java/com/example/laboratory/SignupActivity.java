@@ -3,6 +3,7 @@ package com.example.laboratory;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText nameEd;
@@ -23,11 +27,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     private EditText passwordEd;
     private EditText mobileEd;
     private EditText addressEd;
+    private EditText licenseEd;
     private EditText typesStockEd;
     private Button signupBtn;
     private TextView oldUserTv;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +48,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     private void initView() {
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
         nameEd = findViewById(R.id.activity_signup_name_ed);
         emailEd = findViewById(R.id.activity_signup_email_ed);
         passwordEd = findViewById(R.id.activity_signup_password_ed);
         mobileEd = findViewById(R.id.activity_signup_mobile_ed);
         addressEd = findViewById(R.id.activity_signup_address_ed);
+        licenseEd = findViewById(R.id.activity_signup_license_ed);
         typesStockEd = findViewById(R.id.activity_signup_types_stock_ed);
         signupBtn = findViewById(R.id.activity_signup_signup_btn);
         oldUserTv = findViewById(R.id.activity_signup_old_user_tv);
@@ -78,6 +88,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         final String name = nameEd.getText().toString().trim();
         final String mobile = mobileEd.getText().toString().trim();
         final String address = addressEd.getText().toString().trim();
+        final String license = licenseEd.getText().toString().trim();
         final String types = typesStockEd.getText().toString().trim();
 
         progressDialog.setTitle("Signup user");
@@ -85,7 +96,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         progressDialog.show();
 
         if (email.isEmpty() || password.isEmpty() || name.isEmpty()
-                || mobile.isEmpty() || address.isEmpty() || types.isEmpty()) {
+                || mobile.isEmpty() || address.isEmpty() || types.isEmpty() || license.isEmpty()) {
             progressDialog.dismiss();
             Toast.makeText(this, "Details not entered", Toast.LENGTH_SHORT).show();
         } else {
@@ -99,10 +110,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                         }
                     } else {
                         progressDialog.dismiss();
-                        Toast.makeText(SignupActivity.this, "Signup Success", Toast.LENGTH_SHORT).show();
-                        final Intent gotoHomeActivity = new Intent(SignupActivity.this, HomeActivity.class);
-                        startActivity(gotoHomeActivity);
-                        finish();
+                        insertIntoDatabase(name, email, password, mobile, address, license, types);
                     }
                 }
             });
@@ -110,6 +118,25 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         }
 
 
+    }
+
+    private void insertIntoDatabase(String name, String email, String password, String mobile, String address, String license, String types) {
+
+        databaseReference.child(AppConfig.FIREBASE_DB_LABORATORY)
+                .child(firebaseAuth.getCurrentUser().getUid())
+                .setValue(new LaboratoryModel(name, email, password, mobile, address, license, types), new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+
+                        if (databaseError != null) {
+                            Toast.makeText(SignupActivity.this, "Error :" + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(SignupActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
+                            finish();
+
+                        }
+                    }
+                });
     }
 
 }

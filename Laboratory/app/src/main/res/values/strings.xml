@@ -21,4 +21,10 @@
     <string name="types">Service of Laboratory</string>
     <string name="signup">Signup</string>
     <string name="old_user">Old user</string>
+    <string name="license">License</string>
+    <string name="report">Report</string>
+    <string name="instruction">Description</string>
+    <string name="prescription_title">Title</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="upload">upload</string>
 </resources>

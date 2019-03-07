@@ -6,10 +6,10 @@
     style="@style/CardView.Light"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
-    android:padding="10dp"
     tools:ignore="ContentDescription">
 
     <LinearLayout
@@ -77,7 +77,6 @@
             android:padding="15dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             tools:text="@tools:sample/lorem" />
-
 
 
     </LinearLayout>

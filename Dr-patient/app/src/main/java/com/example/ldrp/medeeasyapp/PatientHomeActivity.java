@@ -154,7 +154,7 @@ public class PatientHomeActivity extends AppCompatActivity
             final Intent gotoMedicalList = new Intent(PatientHomeActivity.this, MedicalListActivity.class);
             startActivity(gotoMedicalList);
         } else if (id == R.id.nav_patient_laboratory) {
-
+            final Intent gotoLaboratoryList = new Intent(PatientHomeActivity.this, LaboratoryListActivity.class);            startActivity(gotoLaboratoryList);
         } else if (id == R.id.nav_patient_quick_medicine) {
             final Intent gotoBasicList = new Intent(PatientHomeActivity.this, BasicDiseasesListActivity.class);
             startActivity(gotoBasicList);

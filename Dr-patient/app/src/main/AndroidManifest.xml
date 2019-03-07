@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SendMedicineRequestActivity"></activity>
+        <activity android:name=".LaboratoryBookingActivity"></activity>
+        <activity android:name=".LaboratoryListActivity" />
+        <activity android:name=".SendMedicineRequestActivity" />
         <activity android:name=".MedicalListActivity" />
         <activity android:name=".BasicDiseasesListActivity" />
         <activity android:name=".PatientReminderActivity" />
