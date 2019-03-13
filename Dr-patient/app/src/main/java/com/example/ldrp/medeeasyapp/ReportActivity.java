@@ -33,7 +33,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Date;
 
 public class ReportActivity extends AppCompatActivity implements View.OnClickListener, ReportItemClickListener {
 
@@ -85,6 +89,7 @@ public class ReportActivity extends AppCompatActivity implements View.OnClickLis
                             PatientReviewModel patientReviewModel = reviewModelSnapshot.getValue(PatientReviewModel.class);
                             patientReviewModelArrayList.add(patientReviewModel);
                         }
+                        Collections.reverse(patientReviewModelArrayList);
                         reportListAdapter.notifyDataSetChanged();
                     }
 
@@ -117,12 +122,15 @@ public class ReportActivity extends AppCompatActivity implements View.OnClickLis
         final String description = descriptionEd.getText().toString().trim();
 
         if (!title.isEmpty() || !description.isEmpty()) {
+            Date date = Calendar.getInstance().getTime();
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            String formattedDate = df.format(date);
             databaseReference.child(AppConfig.FIREBASE_DB_APPOINMENT)
                     .child(firebaseAuth.getCurrentUser().getUid())
                     .child(uuid)
                     .child(AppConfig.FIREBASE_DB_REPORT)
                     .push()
-                    .setValue(new PatientReviewModel(title, description), new DatabaseReference.CompletionListener() {
+                    .setValue(new PatientReviewModel(title, description,formattedDate), new DatabaseReference.CompletionListener() {
                         @Override
                         public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
                             if (databaseError != null) {

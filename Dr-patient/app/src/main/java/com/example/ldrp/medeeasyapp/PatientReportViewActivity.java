@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PatientReportViewActivity extends AppCompatActivity implements ReportItemClickListener {
 
@@ -67,6 +68,7 @@ public class PatientReportViewActivity extends AppCompatActivity implements Repo
                             PatientReviewModel patientReviewModel = reviewModelSnapshot.getValue(PatientReviewModel.class);
                             patientReviewModelArrayList.add(patientReviewModel);
                         }
+                        Collections.reverse(patientReviewModelArrayList);
                         reportListAdapter.notifyDataSetChanged();
                     }
 

@@ -39,7 +39,12 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
 import java.util.UUID;
 
 public class PresciptionActivity extends AppCompatActivity implements PrescriptionItemClickListener, View.OnClickListener {
@@ -102,6 +107,7 @@ public class PresciptionActivity extends AppCompatActivity implements Prescripti
                             PrescriptionModel prescriptionModel = prescriptionModelSnapshot.getValue(PrescriptionModel.class);
                             prescriptionModelArrayList.add(prescriptionModel);
                         }
+                        Collections.reverse(prescriptionModelArrayList);
                         presciptionListAdapter.notifyDataSetChanged();
                     }
 
@@ -128,7 +134,9 @@ public class PresciptionActivity extends AppCompatActivity implements Prescripti
 
     @Override
     public void onPrescriptionItemClick(PrescriptionModel prescriptionModel) {
-
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(prescriptionModel.getImgUrl()));
+        startActivity(intent);
     }
 
 
@@ -203,11 +211,15 @@ public class PresciptionActivity extends AppCompatActivity implements Prescripti
             Toast.makeText(this, "Not Filled the Data", Toast.LENGTH_SHORT).show();
             progressDialog.dismiss();
         } else {
-            databaseReference.child(AppConfig.FIREBASE_DB_APPOINMENT).child(firebaseAuth.getCurrentUser().getUid())
+            Date date = Calendar.getInstance().getTime();
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            String formattedDate = df.format(date);
+            databaseReference.child(AppConfig.FIREBASE_DB_APPOINMENT)
+                    .child(firebaseAuth.getCurrentUser().getUid())
                     .child(uuid)
                     .child(AppConfig.FIREBASE_DB_PRESCRIPTION)
                     .push()
-                    .setValue(new PrescriptionModel(title, description, url), new DatabaseReference.CompletionListener() {
+                    .setValue(new PrescriptionModel(title, description, url, formattedDate), new DatabaseReference.CompletionListener() {
                         @Override
                         public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
                             if (databaseError != null) {
@@ -240,4 +252,6 @@ public class PresciptionActivity extends AppCompatActivity implements Prescripti
             }
         }
     }
+
+
 }

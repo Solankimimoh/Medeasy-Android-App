@@ -6,21 +6,25 @@ public class PrescriptionModel {
     private String title;
     private String description;
     private String imgUrl;
+    private String date;
 
-    public PrescriptionModel(String patientUUID, String title, String description, String imgUrl) {
+
+    public PrescriptionModel(String title, String description, String imgUrl, String date) {
+        this.title = title;
+        this.description = description;
+        this.imgUrl = imgUrl;
+        this.date = date;
+    }
+
+    public PrescriptionModel() {
+    }
+
+    public PrescriptionModel(String patientUUID, String title, String description, String imgUrl, String date) {
         this.patientUUID = patientUUID;
         this.title = title;
         this.description = description;
         this.imgUrl = imgUrl;
-    }
-
-    public PrescriptionModel(String title, String description, String imgUrl) {
-        this.title = title;
-        this.description = description;
-        this.imgUrl = imgUrl;
-    }
-
-    public PrescriptionModel() {
+        this.date = date;
     }
 
     public String getPatientUUID() {
@@ -53,5 +57,13 @@ public class PrescriptionModel {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -1,30 +1,27 @@
-package com.example.ldrp.medeeasyapp.model;
+package com.example.laboratory;
 
-public class PatientReviewModel {
-
+public class ReportModel {
 
     private String patientUUID;
     private String title;
     private String description;
-    private String date;
+    private String imgUrl;
 
-
-    public PatientReviewModel() {
-    }
-
-    public PatientReviewModel(String patientUUID, String title, String description, String date) {
+    public ReportModel(String patientUUID, String title, String description, String imgUrl) {
         this.patientUUID = patientUUID;
         this.title = title;
         this.description = description;
-        this.date = date;
+        this.imgUrl = imgUrl;
     }
 
-    public PatientReviewModel(String title, String description, String date) {
+    public ReportModel(String title, String description, String imgUrl) {
         this.title = title;
         this.description = description;
-        this.date = date;
+        this.imgUrl = imgUrl;
     }
 
+    public ReportModel() {
+    }
 
     public String getPatientUUID() {
         return patientUUID;
@@ -50,11 +47,11 @@ public class PatientReviewModel {
         this.description = description;
     }
 
-    public String getDate() {
-        return date;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

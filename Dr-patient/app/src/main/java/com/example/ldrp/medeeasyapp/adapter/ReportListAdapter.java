@@ -36,11 +36,13 @@ public class ReportListAdapter extends RecyclerView.Adapter<ReportListAdapter.My
         private PatientReviewModel reviewModel;
         private TextView titleTv;
         private TextView descriptionTv;
+        private TextView date;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTv = itemView.findViewById(R.id.row_layout_presciption_title);
             descriptionTv = itemView.findViewById(R.id.row_layout_presciption_description);
+            date = itemView.findViewById(R.id.row_layout_presciption_description_date);
 
             itemView.setOnClickListener(this);
         }
@@ -49,6 +51,8 @@ public class ReportListAdapter extends RecyclerView.Adapter<ReportListAdapter.My
             reviewModel = data;
             titleTv.setText(data.getTitle());
             descriptionTv.setText(data.getDescription());
+            date.setText(data.getDate());
+
         }
 
         @Override

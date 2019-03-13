@@ -2,6 +2,7 @@ package com.example.ldrp.medeeasyapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PatientPrescriptionViewActivity extends AppCompatActivity implements PrescriptionItemClickListener {
 
@@ -70,6 +72,7 @@ public class PatientPrescriptionViewActivity extends AppCompatActivity implement
                             PrescriptionModel prescriptionModel= prescriptionModelSnapshot.getValue(PrescriptionModel.class);
                             prescriptionModelArrayList.add(prescriptionModel);
                         }
+                        Collections.reverse(prescriptionModelArrayList);
                         presciptionListAdapter.notifyDataSetChanged();
                     }
 
@@ -83,6 +86,8 @@ public class PatientPrescriptionViewActivity extends AppCompatActivity implement
 
     @Override
     public void onPrescriptionItemClick(PrescriptionModel prescriptionModel) {
-
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(prescriptionModel.getImgUrl()));
+        startActivity(intent);
     }
 }

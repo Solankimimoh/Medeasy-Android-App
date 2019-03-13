@@ -36,6 +36,14 @@
             android:paddingBottom="10dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             tools:text="@tools:sample/lorem" />
+        <TextView
+            android:id="@+id/row_layout_presciption_description_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingBottom="10dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            tools:text="@tools:sample/lorem" />
 
     </LinearLayout>
 

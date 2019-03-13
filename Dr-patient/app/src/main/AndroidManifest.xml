@@ -45,15 +45,17 @@
             android:name=".doctor.DoctorLoginActivity"
             android:label="@string/doctor_login" />
         <activity android:name=".LoginSelectionActivity">
+
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

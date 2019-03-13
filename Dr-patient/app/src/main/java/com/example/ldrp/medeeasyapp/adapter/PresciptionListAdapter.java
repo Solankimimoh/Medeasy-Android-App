@@ -37,12 +37,14 @@ public class PresciptionListAdapter extends RecyclerView.Adapter<PresciptionList
         private PrescriptionModel prescriptionModel;
         private TextView titleTv;
         private TextView descriptionTv;
+        private TextView date;
         private ImageView imageView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTv = itemView.findViewById(R.id.row_layout_presciption_title);
             descriptionTv = itemView.findViewById(R.id.row_layout_presciption_description);
+            date = itemView.findViewById(R.id.row_layout_presciption_date);
             imageView = itemView.findViewById(R.id.row_layout_presciption_img);
 
             itemView.setOnClickListener(this);
@@ -52,6 +54,7 @@ public class PresciptionListAdapter extends RecyclerView.Adapter<PresciptionList
             this.prescriptionModel = data;
             titleTv.setText(data.getTitle());
             descriptionTv.setText(data.getDescription());
+            date.setText(data.getDate());
 
 
             Glide.with(context)
