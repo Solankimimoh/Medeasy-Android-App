@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -55,7 +56,10 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View hView =  navigationView.getHeaderView(0);
 
+        TextView textView = hView.findViewById(R.id.textView);
+        textView.setText(firebaseAuth.getCurrentUser().getEmail());
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -221,7 +225,8 @@ public class HomeActivity extends AppCompatActivity
             final Intent gotoViewList = new Intent(HomeActivity.this, ViewPatientListActivity.class);
             startActivity(gotoViewList);
         } else if (id == R.id.nav_logout) {
-
+            firebaseAuth.signOut();
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

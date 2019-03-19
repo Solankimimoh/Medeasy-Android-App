@@ -1,7 +1,9 @@
 package com.example.ldrp.medeeasyapp.doctor;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -124,9 +126,15 @@ public class DoctorLoginActivity extends AppCompatActivity implements View.OnCli
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     progressDialog.dismiss();
+                    SharedPreferences sharedpreferences;
+                    sharedpreferences = getSharedPreferences("login.xml", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString("TYPE", "1");
+                    editor.apply();
                     Toast.makeText(DoctorLoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
                     final Intent gotoDoctorHome = new Intent(DoctorLoginActivity.this, DoctorHomeActivity.class);
                     startActivity(gotoDoctorHome);
+                    finish();
                 } else {
                     progressDialog.dismiss();
                     Toast.makeText(DoctorLoginActivity.this, "Not Right User to Login", Toast.LENGTH_SHORT).show();

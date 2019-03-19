@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ldrp.medeeasyapp.DoctorReminderActivity;
@@ -125,6 +126,11 @@ public class DoctorHomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View hView =  navigationView.getHeaderView(0);
+
+        TextView textView = hView.findViewById(R.id.textView1);
+        textView.setText(firebaseAuth.getCurrentUser().getEmail());
+
     }
 
     @Override

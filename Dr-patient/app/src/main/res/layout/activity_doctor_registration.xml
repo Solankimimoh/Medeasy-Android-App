@@ -76,6 +76,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/types" />
+        <Button
+            android:id="@+id/activity_signup_signup_choose_license"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/chooselicense"
+            android:textColor="@color/colorWhite" />
 
         <Button
             android:id="@+id/activity_signup_signup_btn"

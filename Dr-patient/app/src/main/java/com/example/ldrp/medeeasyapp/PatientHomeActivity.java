@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ldrp.medeeasyapp.adapter.DoctorListAdapter;
@@ -99,6 +100,9 @@ public class PatientHomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View hView =  navigationView.getHeaderView(0);
+        TextView textView = hView.findViewById(R.id.textView);
+        textView.setText(firebaseAuth.getCurrentUser().getEmail());
     }
 
     private void initView() {
@@ -154,13 +158,15 @@ public class PatientHomeActivity extends AppCompatActivity
             final Intent gotoMedicalList = new Intent(PatientHomeActivity.this, MedicalListActivity.class);
             startActivity(gotoMedicalList);
         } else if (id == R.id.nav_patient_laboratory) {
-            final Intent gotoLaboratoryList = new Intent(PatientHomeActivity.this, LaboratoryListActivity.class);            startActivity(gotoLaboratoryList);
+            final Intent gotoLaboratoryList = new Intent(PatientHomeActivity.this, LaboratoryListActivity.class);
+            startActivity(gotoLaboratoryList);
         } else if (id == R.id.nav_patient_quick_medicine) {
             final Intent gotoBasicList = new Intent(PatientHomeActivity.this, BasicDiseasesListActivity.class);
             startActivity(gotoBasicList);
 
         } else if (id == R.id.nav_patient_logout) {
-
+            firebaseAuth.signOut();
+            finish();
         } else if (id == R.id.nav_patient_book_reminder) {
             final Intent gotoReminder = new Intent(PatientHomeActivity.this, PatientReminderActivity.class);
             startActivity(gotoReminder);
@@ -172,7 +178,7 @@ public class PatientHomeActivity extends AppCompatActivity
     }
 
     @Override
-    public void onDoctorItemClick(DoctorModel doctorModel,View view) {
+    public void onDoctorItemClick(DoctorModel doctorModel, View view) {
 
         final Intent gotoBookAppointment = new Intent(PatientHomeActivity.this,
                 BookAppoinmentActivity.class);

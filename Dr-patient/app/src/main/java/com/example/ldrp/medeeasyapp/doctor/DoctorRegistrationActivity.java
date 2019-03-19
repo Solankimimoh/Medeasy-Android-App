@@ -1,8 +1,13 @@
 package com.example.ldrp.medeeasyapp.doctor;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +38,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements Vie
     private EditText educationEd;
     private EditText typesEd;
     private Button doctorSingupBtn;
+    private Button chooseLicensebtn;
 
     private ProgressDialog progressDialog;
 
@@ -66,7 +72,26 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements Vie
         progressDialog = new ProgressDialog(DoctorRegistrationActivity.this);
 
         doctorSingupBtn = findViewById(R.id.activity_signup_signup_btn);
+        chooseLicensebtn = findViewById(R.id.activity_signup_signup_choose_license);
         doctorSingupBtn.setOnClickListener(this);
+        chooseLicensebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(DoctorRegistrationActivity.this,
+                        android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(DoctorRegistrationActivity.this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE, android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                    return;
+                } //creating an intent for file chooser
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 100);
+
+            }
+        });
 
 
     }
@@ -74,11 +99,9 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements Vie
     @Override
     public void onClick(View v) {
 
-
         progressDialog.setTitle("Account Create");
         progressDialog.setMessage("Account Creating...");
         progressDialog.show();
-
         final String name = nameEd.getText().toString().trim();
         final String email = emailEd.getText().toString().trim();
         final String password = passwordEd.getText().toString().trim();
