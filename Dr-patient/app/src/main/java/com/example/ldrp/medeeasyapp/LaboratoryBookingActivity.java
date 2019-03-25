@@ -138,7 +138,7 @@ public class LaboratoryBookingActivity extends AppCompatActivity implements View
         final DatePickerDialog datePickerDialog = new DatePickerDialog(LaboratoryBookingActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                dateTv.setText(dayOfMonth + "/" + month + "/" + year);
+                dateTv.setText(dayOfMonth + "/" + (month+1) + "/" + year);
 
             }
         }, mYear, mMonth, mDay);
