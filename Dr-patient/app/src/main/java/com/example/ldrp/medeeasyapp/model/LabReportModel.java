@@ -1,6 +1,6 @@
-package com.example.laboratory;
+package com.example.ldrp.medeeasyapp.model;
 
-public class ReportModel {
+public class LabReportModel {
 
     private String patientUUID;
     private String title;
@@ -17,14 +17,14 @@ public class ReportModel {
         this.date = date;
     }
 
-    public ReportModel( String title, String description, String fileUrl, String date) {
+    public LabReportModel(String title, String description, String fileUrl, String date) {
         this.title = title;
         this.description = description;
         this.fileUrl = fileUrl;
         this.date = date;
     }
 
-    public ReportModel(String patientUUID, String title, String description, String fileUrl, String date) {
+    public LabReportModel(String patientUUID, String title, String description, String fileUrl, String date) {
         this.patientUUID = patientUUID;
         this.title = title;
         this.description = description;
@@ -32,13 +32,13 @@ public class ReportModel {
         this.date = date;
     }
 
-    public ReportModel(String title, String description, String fileUrl) {
+    public LabReportModel(String title, String description, String fileUrl) {
         this.title = title;
         this.description = description;
         this.fileUrl = fileUrl;
     }
 
-    public ReportModel() {
+    public LabReportModel() {
     }
 
     public String getPatientUUID() {

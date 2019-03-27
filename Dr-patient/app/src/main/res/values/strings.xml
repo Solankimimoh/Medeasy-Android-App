@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MedEasy</string>
+    <string name="app_name">Net. Hakim</string>
     <string name="doctor">Doctor</string>
     <string name="patient">Patient</string>
     <string name="email">Email</string>
@@ -42,5 +42,6 @@
     <string name="add">Add</string>
     <string name="reminder">Set Reminder</string>
     <string name="chooselicense">Choose  License</string>
+    <string name="labreport">Lab Report</string>
 
 </resources>

@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@string/choose_image" />
+            android:text="@string/choose_pdf" />
 
         <Button
             android:id="@+id/activity_add_report_title_upload"

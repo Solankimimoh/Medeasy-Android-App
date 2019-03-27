@@ -153,7 +153,8 @@ public class PatientHomeActivity extends AppCompatActivity
             final Intent gotoDoctorSelect = new Intent(PatientHomeActivity.this, DoctorSelectPrescriptionActivity.class);
             startActivity(gotoDoctorSelect);
         } else if (id == R.id.nav_patient_lab_report) {
-
+            final Intent gotoLabReport = new Intent(PatientHomeActivity.this, PatientViewLabReportActivity.class);
+            startActivity(gotoLabReport);
         } else if (id == R.id.nav_patient_medical) {
             final Intent gotoMedicalList = new Intent(PatientHomeActivity.this, MedicalListActivity.class);
             startActivity(gotoMedicalList);

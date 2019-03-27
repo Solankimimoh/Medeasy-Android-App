@@ -28,7 +28,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 public class AddReportActivity extends AppCompatActivity implements View.OnClickListener {
@@ -95,7 +98,7 @@ public class AddReportActivity extends AppCompatActivity implements View.OnClick
                     return;
                 } //creating an intent for file chooser
                 Intent intent = new Intent();
-                intent.setType("image/*");
+                intent.setType("application/pdf");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMG_CODE);
                 break;
@@ -150,6 +153,9 @@ public class AddReportActivity extends AppCompatActivity implements View.OnClick
 
         final String title = titleEd.getText().toString().trim();
         final String description = descriptionEd.getText().toString().trim();
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(date);
 
         if (title.isEmpty() || description.isEmpty()) {
             Toast.makeText(this, "Not Filled the Data", Toast.LENGTH_SHORT).show();
@@ -159,7 +165,8 @@ public class AddReportActivity extends AppCompatActivity implements View.OnClick
                     .child(firebaseAuth.getCurrentUser().getUid())
                     .child(uuid)
                     .child(AppConfig.FIREBASE_DB_REPORT)
-                    .setValue(new ReportModel(title, description, url), new DatabaseReference.CompletionListener() {
+                    .push()
+                    .setValue(new ReportModel(title, description, url,formattedDate), new DatabaseReference.CompletionListener() {
                         @Override
                         public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
                             if (databaseError != null) {

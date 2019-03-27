@@ -2,11 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:id="@+id/popup_report"
-        android:title="@string/report">
-    </item>
-    <item android:id="@+id/popup_prescription"
-        android:title="@string/prescription">
-    </item>
+    <item
+        android:id="@+id/popup_report"
+        android:title="@string/report"></item>
+    <item
+        android:id="@+id/popup_prescription"
+        android:title="@string/prescription"></item>
+    <item
+        android:id="@+id/popup_lab_report"
+        android:title="@string/labreport"></item>
 
 </menu>

@@ -92,7 +92,7 @@ public class PatientLoginActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void patientLogin() {
-        progressDialog.setTitle("Doctor Login");
+        progressDialog.setTitle("Patient Login");
         progressDialog.setMessage("Credential Verifying...");
         progressDialog.show();
 

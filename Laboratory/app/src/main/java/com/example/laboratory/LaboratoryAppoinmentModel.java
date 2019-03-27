@@ -3,6 +3,7 @@ package com.example.laboratory;
 public class LaboratoryAppoinmentModel {
 
 
+    private String pushKey;
     private String purpose;
     private String date;
     private String time;
@@ -10,6 +11,23 @@ public class LaboratoryAppoinmentModel {
     private boolean status;
     private PatientModel patientModel;
 
+    public String getPushKey() {
+        return pushKey;
+    }
+
+    public void setPushKey(String pushKey) {
+        this.pushKey = pushKey;
+    }
+
+    public LaboratoryAppoinmentModel(String pushKey, String purpose, String date, String time, String remarks, boolean status, PatientModel patientModel) {
+        this.pushKey = pushKey;
+        this.purpose = purpose;
+        this.date = date;
+        this.time = time;
+        this.remarks = remarks;
+        this.status = status;
+        this.patientModel = patientModel;
+    }
 
     public LaboratoryAppoinmentModel(String purpose, String date, String time, String remarks, boolean status, PatientModel patientModel) {
         this.purpose = purpose;

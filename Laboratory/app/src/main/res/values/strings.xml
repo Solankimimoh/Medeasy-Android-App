@@ -25,6 +25,6 @@
     <string name="report">Report</string>
     <string name="instruction">Description</string>
     <string name="prescription_title">Title</string>
-    <string name="choose_image">Choose Image</string>
+    <string name="choose_pdf">Choose PDF</string>
     <string name="upload">upload</string>
 </resources>
