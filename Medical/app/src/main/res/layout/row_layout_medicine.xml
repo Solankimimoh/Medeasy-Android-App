@@ -10,6 +10,9 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
+    app:cardElevation="8dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
     tools:ignore="ContentDescription">
 
     <LinearLayout
@@ -50,11 +53,15 @@
             android:id="@+id/row_layout_medicine_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/icon_user"
+            android:drawablePadding="5dp"
             android:padding="15dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             tools:text="@tools:sample/lorem" />
 
         <TextView
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/icon_email"
             android:id="@+id/row_layout_medicine_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,6 +70,8 @@
             tools:text="@tools:sample/lorem" />
 
         <TextView
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/icon_mobile"
             android:id="@+id/row_layout_medicine_mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,6 +83,8 @@
             android:id="@+id/row_layout_medicine_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/icon_address"
             android:padding="15dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             tools:text="@tools:sample/lorem" />

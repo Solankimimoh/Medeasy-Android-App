@@ -136,7 +136,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/places/ic_business_center_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/notification/ic_airline_seat_individual_suite_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -146,7 +146,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="icon_medical" />
+                            <entry key="outputName" value="icon_report" />
                             <entry key="sourceFile" value="C:\Users\solan" />
                           </map>
                         </option>

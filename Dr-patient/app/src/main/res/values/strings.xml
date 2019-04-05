@@ -43,5 +43,15 @@
     <string name="reminder">Set Reminder</string>
     <string name="chooselicense">Choose  License</string>
     <string name="labreport">Lab Report</string>
+    <string name="patinet_report">Lab Report Patient</string>
+    <string name="laboratory">Laboratory List</string>
+    <string name="lab_book">Book Lab</string>
+    <string name="medical_list">Medical List</string>
+    <string name="disease">Basic Diseases</string>
+    <string name="patient_reminder">Patiner Reminder</string>
+    <string name="viewprescription">View Prescription</string>
+    <string name="forgot_passwor">Forgot Password</string>
+    <string name="doctorregi">Doctor Registration</string>
+    <string name="loginsele">Login Selection</string>
 
 </resources>

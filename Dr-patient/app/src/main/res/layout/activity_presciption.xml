@@ -30,6 +30,8 @@
             android:hint="@string/instruction" />
 
         <Button
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary"
             android:id="@+id/activity_presciption_image_choose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +39,8 @@
             android:text="@string/choose_image" />
 
         <Button
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimaryDark"
             android:id="@+id/activity_presciption_upload"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

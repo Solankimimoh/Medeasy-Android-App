@@ -9,6 +9,9 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
+    app:cardElevation="8dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
     tools:ignore="ContentDescription">
 
     <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,72 +25,85 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
+            android:padding="15dp"
             android:text="@string/address"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/row_layout_doctor_list_email"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_email"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
             android:text="@string/address"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_doctor_list_name" />
 
         <TextView
             android:id="@+id/row_layout_doctor_list_mobile"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_mobile"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="15dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_doctor_list_email" />
 
         <TextView
             android:id="@+id/row_layout_doctor_list_adress"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_address"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="15dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_doctor_list_mobile" />
 
         <TextView
             android:id="@+id/row_layout_doctor_list_education"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_education"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="15dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_doctor_list_adress" />
 
         <TextView
+
             android:id="@+id/row_layout_doctor_list_types"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -95,10 +111,13 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
+            android:drawableStart="@drawable/icon_remarks"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="15dp"
             android:text="@string/action_settings"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

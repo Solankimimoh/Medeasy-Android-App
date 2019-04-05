@@ -9,6 +9,9 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
+    app:cardElevation="8dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
     tools:ignore="ContentDescription">
 
     <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,57 +20,69 @@
 
         <TextView
             android:id="@+id/row_layout_appoinment_patient_name"
-            android:layout_width="363dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_user"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
             android:text="@string/address"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/colorAccent"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/row_layout_appoinment_patient_mobile"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_mobile"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
             android:text="@string/address"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_appoinment_patient_name" />
 
         <TextView
             android:id="@+id/row_layout_appoinment_patient_email"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_email"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="10dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_appoinment_patient_mobile" />
 
         <TextView
+
             android:id="@+id/row_layout_appoinment_patient_purpose"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_purpose"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="10dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_appoinment_patient_email" />
@@ -79,26 +94,30 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/icon_date"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="10dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_layout_appoinment_patient_purpose" />
 
         <TextView
             android:id="@+id/row_layout_appoinment_patient_time"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
+            android:drawableStart="@drawable/icon_time"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="10dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -115,10 +134,12 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
+            android:drawableStart="@drawable/icon_remarks"
+            android:drawablePadding="5dp"
             android:lineSpacingExtra="8dp"
+            android:padding="10dp"
             android:text="@string/action_settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

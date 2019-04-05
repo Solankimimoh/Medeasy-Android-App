@@ -29,13 +29,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/choose_image" />
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/choose_image"
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/activity_send_medicine_request_upload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/upload" />
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/upload"
+        android:textColor="@color/colorWhite" />
 
 </LinearLayout>

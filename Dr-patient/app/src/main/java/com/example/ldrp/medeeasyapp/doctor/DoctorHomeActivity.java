@@ -128,9 +128,9 @@ public class DoctorHomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View hView =  navigationView.getHeaderView(0);
-
-        TextView textView = hView.findViewById(R.id.textView1);
-        textView.setText(firebaseAuth.getCurrentUser().getEmail());
+//
+//        TextView textView = hView.findViewById(R.id.textView1);
+//        textView.setText(firebaseAuth.getCurrentUser().getEmail());
 
     }
 

@@ -63,8 +63,8 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         View hView = navigationView.getHeaderView(0);
 
-        TextView textView = hView.findViewById(R.id.textView);
-        textView.setText(firebaseAuth.getCurrentUser().getEmail());
+//        TextView textView = hView.findViewById(R.id.textView);
+//        textView.setText(firebaseAuth.getCurrentUser().getEmail());
 
 
         recyclerView = findViewById(R.id.content_home_appoinment);

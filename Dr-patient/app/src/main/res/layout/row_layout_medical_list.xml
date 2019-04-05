@@ -9,6 +9,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
+    app:cardElevation="8dp"
     tools:ignore="ContentDescription">
 
     <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -21,46 +22,57 @@
             android:id="@+id/row_layout_medical_list_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:drawableStart="@drawable/icon_user"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
+
             android:text="@string/address"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/colorAccent" />
+            />
 
         <TextView
             android:id="@+id/row_layout_medical_list_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:drawableStart="@drawable/icon_email"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
+
             android:text="@string/address"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimary" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/row_layout_medical_list_mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:drawableStart="@drawable/icon_mobile"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
+
             android:text="@string/action_settings"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/row_layout_medical_list_adress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:drawableStart="@drawable/icon_address"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
+
             android:text="@string/action_settings"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/row_layout_medical_list_types"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:drawableStart="@drawable/icon_remarks"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
+
             android:text="@string/action_settings"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     </LinearLayout>
 

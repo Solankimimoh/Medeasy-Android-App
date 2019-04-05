@@ -13,14 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PatientViewLabReportActivity"></activity>
-        <activity android:name=".LaboratoryBookingActivity" />
-        <activity android:name=".LaboratoryListActivity" />
-        <activity android:name=".SendMedicineRequestActivity" />
-        <activity android:name=".MedicalListActivity" />
-        <activity android:name=".BasicDiseasesListActivity" />
-        <activity android:name=".PatientReminderActivity" />
-        <activity android:name=".PatientPrescriptionViewActivity" />
+        <activity
+            android:name=".PatientViewLabReportActivity"
+            android:label="@string/patinet_report"></activity>
+        <activity
+            android:name=".LaboratoryBookingActivity"
+            android:label="@string/lab_book" />
+        <activity
+            android:name=".LaboratoryListActivity"
+            android:label="@string/laboratory" />
+        <activity
+            android:name=".SendMedicineRequestActivity"
+            android:label="@string/prescription" />
+        <activity
+            android:name=".MedicalListActivity"
+            android:label="@string/medical_list" />
+        <activity
+            android:name=".BasicDiseasesListActivity"
+            android:label="@string/disease" />
+        <activity
+            android:name=".PatientReminderActivity"
+            android:label="@string/patient_reminder" />
+        <activity android:name=".PatientPrescriptionViewActivity"
+            android:label="@string/viewprescription"/>
         <activity android:name=".PatientReportViewActivity" />
         <activity android:name=".DoctorSelectPrescriptionActivity" />
         <activity android:name=".DoctorReminderActivity" />
@@ -40,12 +55,15 @@
             android:name=".doctor.DoctorHomeActivity"
             android:label="@string/title_activity_doctor_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".doctor.DoctorRegistrationActivity" />
+        <activity android:name=".ForgotPasswordActivity"
+            android:label="@string/forgot_passwor"/>
+        <activity android:name=".doctor.DoctorRegistrationActivity"
+            android:label="@string/doctorregi"/>
         <activity
             android:name=".doctor.DoctorLoginActivity"
             android:label="@string/doctor_login" />
-        <activity android:name=".LoginSelectionActivity"></activity>
+        <activity android:name=".LoginSelectionActivity"
+            android:label="@string/loginsele"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">

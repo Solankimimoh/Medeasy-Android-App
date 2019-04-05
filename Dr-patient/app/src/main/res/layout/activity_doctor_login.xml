@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/forgot_password"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/actvitiy_doctor_login_new_doctor_tv"
@@ -64,7 +64,7 @@
                 android:layout_weight="1"
                 android:text="@string/new_doctor"
                 android:textAlignment="textEnd"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorPrimaryDark" />
 
         </LinearLayout>
     </LinearLayout>

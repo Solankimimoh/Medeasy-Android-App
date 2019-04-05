@@ -59,8 +59,8 @@ public class HomeActivity extends AppCompatActivity
 
         View hView =  navigationView.getHeaderView(0);
 
-        TextView textView = hView.findViewById(R.id.textView);
-        textView.setText(firebaseAuth.getCurrentUser().getEmail());
+//        TextView textView = hView.findViewById(R.id.textView);
+//        textView.setText(firebaseAuth.getCurrentUser().getEmail());
 
         recyclerView = findViewById(R.id.activity_home_medicine_list_rv);
 

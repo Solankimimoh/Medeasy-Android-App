@@ -53,10 +53,12 @@
 
 
         <Button
+            android:textColor="@color/colorWhite"
             android:id="@+id/activity_doctor_reminder_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
             android:text="@string/reminder" />
 
         <android.support.v7.widget.RecyclerView

@@ -47,6 +47,8 @@
         android:inputType="text" />
 
     <Button
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPrimary"
         android:id="@+id/activity_laboratory_booking_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
