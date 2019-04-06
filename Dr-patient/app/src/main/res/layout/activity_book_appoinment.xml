@@ -51,9 +51,10 @@
         android:id="@+id/activity_book_appoinment_book_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         android:layout_margin="10dp"
-        android:hint="@string/book" />
+        android:text="@string/book" />
 
 
 </LinearLayout>
