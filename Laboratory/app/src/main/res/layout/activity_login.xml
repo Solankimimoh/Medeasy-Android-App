@@ -41,7 +41,7 @@
             android:layout_margin="20dp"
             android:background="@color/colorPrimary"
             android:text="@string/login"
-            android:textColor="@color/colorWhite" />
+            android:textColor="#fff" />
 
         <LinearLayout
             android:layout_width="match_parent"

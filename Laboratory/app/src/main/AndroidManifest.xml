@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.laboratory">
 
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,17 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddReportActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".AddReportActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".ViewPatientListActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ViewPatientListActivity"
+            android:label="View Patient" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="Forgot Password" />
+        <activity
+            android:name=".SignupActivity"
+            android:label="Signup" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

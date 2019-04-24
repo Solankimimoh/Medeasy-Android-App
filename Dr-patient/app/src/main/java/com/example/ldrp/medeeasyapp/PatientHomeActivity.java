@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.ldrp.medeeasyapp.adapter.DoctorListAdapter;
 import com.example.ldrp.medeeasyapp.app.AppConfig;
+import com.example.ldrp.medeeasyapp.doctor.DoctorHomeActivity;
 import com.example.ldrp.medeeasyapp.listener.DoctorItemClickListener;
 import com.example.ldrp.medeeasyapp.model.DoctorModel;
 import com.example.ldrp.medeeasyapp.patient.BookAppoinmentActivity;
@@ -134,7 +135,9 @@ public class PatientHomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.patient_profile) {
+            final Intent gotoProfile = new Intent(PatientHomeActivity.this, PatientProfileActivity.class);
+            startActivity(gotoProfile);
             return true;
         }
 

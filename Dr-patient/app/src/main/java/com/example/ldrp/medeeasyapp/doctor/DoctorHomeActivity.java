@@ -21,6 +21,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ldrp.medeeasyapp.DoctorProfileActivity;
 import com.example.ldrp.medeeasyapp.DoctorReminderActivity;
 import com.example.ldrp.medeeasyapp.PatientViewLabReportActivity;
 import com.example.ldrp.medeeasyapp.PresciptionActivity;
@@ -127,11 +128,13 @@ public class DoctorHomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        View hView =  navigationView.getHeaderView(0);
 //
 //        TextView textView = hView.findViewById(R.id.textView1);
 //        textView.setText(firebaseAuth.getCurrentUser().getEmail());
 
+        View hView = navigationView.getHeaderView(0);
+        TextView textView = hView.findViewById(R.id.textView1);
+        textView.setText(firebaseAuth.getCurrentUser().getEmail());
     }
 
     @Override
@@ -159,7 +162,11 @@ public class DoctorHomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.doctor_profile) {
+
+            final Intent gotoProfile = new Intent(DoctorHomeActivity.this, DoctorProfileActivity.class);
+            startActivity(gotoProfile);
+
             return true;
         }
 
@@ -220,7 +227,7 @@ public class DoctorHomeActivity extends AppCompatActivity
                         gotoPrescriptionView.putExtra(AppConfig.KEY_PATIENT_UID, appoinmentModel.getPatientModel().getUuid());
                         startActivity(gotoPrescriptionView);
                         break;
-                        case R.id.popup_lab_report:
+                    case R.id.popup_lab_report:
                         final Intent gotoLabReportView = new Intent(DoctorHomeActivity.this,
                                 PatientViewLabReportActivity.class);
                         gotoLabReportView.putExtra(AppConfig.KEY_PATIENT_UID, appoinmentModel.getPatientModel().getUuid());

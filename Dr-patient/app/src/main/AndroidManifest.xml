@@ -13,9 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PatientProfileActivity"></activity>
+        <activity
+            android:name=".DoctorProfileActivity"
+            android:label="Profle" />
         <activity
             android:name=".PatientViewLabReportActivity"
-            android:label="@string/patinet_report"></activity>
+            android:label="@string/patinet_report" />
         <activity
             android:name=".LaboratoryBookingActivity"
             android:label="@string/lab_book" />
@@ -34,15 +38,30 @@
         <activity
             android:name=".PatientReminderActivity"
             android:label="@string/patient_reminder" />
-        <activity android:name=".PatientPrescriptionViewActivity"
-            android:label="@string/viewprescription"/>
-        <activity android:name=".PatientReportViewActivity" />
-        <activity android:name=".DoctorSelectPrescriptionActivity" />
-        <activity android:name=".DoctorReminderActivity" />
-        <activity android:name=".ReportActivity" />
-        <activity android:name=".PresciptionActivity" />
-        <activity android:name=".ViewRequestAppoinmentActivity" />
-        <activity android:name=".patient.BookAppoinmentActivity" />
+        <activity
+            android:name=".PatientPrescriptionViewActivity"
+            android:label="@string/viewprescription" />
+        <activity
+            android:name=".PatientReportViewActivity"
+            android:label="Patient Report" />
+        <activity
+            android:name=".DoctorSelectPrescriptionActivity"
+            android:label="Prescription Select" />
+        <activity
+            android:name=".DoctorReminderActivity"
+            android:label="Doctor Reminder" />
+        <activity
+            android:name=".ReportActivity"
+            android:label="Report List" />
+        <activity
+            android:name=".PresciptionActivity"
+            android:label="Prescription List" />
+        <activity
+            android:name=".ViewRequestAppoinmentActivity"
+            android:label="Appointment Request List" />
+        <activity
+            android:name=".patient.BookAppoinmentActivity"
+            android:label="Book Appoinment" />
         <activity
             android:name=".PatientHomeActivity"
             android:label="@string/title_activity_patient_home"
@@ -55,15 +74,18 @@
             android:name=".doctor.DoctorHomeActivity"
             android:label="@string/title_activity_doctor_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ForgotPasswordActivity"
-            android:label="@string/forgot_passwor"/>
-        <activity android:name=".doctor.DoctorRegistrationActivity"
-            android:label="@string/doctorregi"/>
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/forgot_passwor" />
+        <activity
+            android:name=".doctor.DoctorRegistrationActivity"
+            android:label="@string/doctorregi" />
         <activity
             android:name=".doctor.DoctorLoginActivity"
             android:label="@string/doctor_login" />
-        <activity android:name=".LoginSelectionActivity"
-            android:label="@string/loginsele"></activity>
+        <activity
+            android:name=".LoginSelectionActivity"
+            android:label="@string/loginsele" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">

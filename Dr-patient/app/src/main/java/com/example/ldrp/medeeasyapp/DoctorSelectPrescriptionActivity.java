@@ -112,7 +112,7 @@ public class DoctorSelectPrescriptionActivity extends AppCompatActivity implemen
     public void onDoctorItemClick(final DoctorModel doctorModel, View view) {
         PopupMenu popup = new PopupMenu(DoctorSelectPrescriptionActivity.this, view);
         //Inflating the Popup using xml file
-        popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+        popup.getMenuInflater().inflate(R.menu.popup_menu_patient, popup.getMenu());
 
         popup.show();
 
@@ -136,6 +136,7 @@ public class DoctorSelectPrescriptionActivity extends AppCompatActivity implemen
                         gotoPrescriptionView.putExtra(AppConfig.KEY_DOCTOR_UID, doctorModel.getUid());
                         startActivity(gotoPrescriptionView);
                         break;
+
                 }
                 return true;
             }

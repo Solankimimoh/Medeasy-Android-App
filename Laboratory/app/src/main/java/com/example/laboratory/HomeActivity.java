@@ -61,11 +61,12 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        View hView = navigationView.getHeaderView(0);
 
 //        TextView textView = hView.findViewById(R.id.textView);
 //        textView.setText(firebaseAuth.getCurrentUser().getEmail());
-
+        View hView = navigationView.getHeaderView(0);
+        TextView textView = hView.findViewById(R.id.textView);
+        textView.setText(firebaseAuth.getCurrentUser().getEmail());
 
         recyclerView = findViewById(R.id.content_home_appoinment);
 
@@ -85,9 +86,7 @@ public class HomeActivity extends AppCompatActivity
                         for (final DataSnapshot appoinmentModelSnapshot : dataSnapshot.getChildren()) {
 
 
-                            
                             for (final DataSnapshot appoinmentModelSnapshotPush : appoinmentModelSnapshot.getChildren()) {
-
 
 
                                 final LaboratoryAppoinmentModel appoinmentModel = appoinmentModelSnapshotPush.getValue(LaboratoryAppoinmentModel.class);
@@ -155,11 +154,9 @@ public class HomeActivity extends AppCompatActivity
                         .child("status").setValue(true, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
-                        if(databaseError!=null)
-                        {
-                            Toast.makeText(HomeActivity.this, "Error "+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-                        }else
-                        {
+                        if (databaseError != null) {
+                            Toast.makeText(HomeActivity.this, "Error " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                        } else {
                             Toast.makeText(HomeActivity.this, "Inserted Success", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -207,7 +204,10 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.profile) {
+
+            final Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(intent);
             return true;
         }
 

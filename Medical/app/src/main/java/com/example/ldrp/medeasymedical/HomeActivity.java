@@ -1,5 +1,6 @@
 package com.example.ldrp.medeasymedical;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -57,11 +58,12 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        View hView =  navigationView.getHeaderView(0);
+        View hView = navigationView.getHeaderView(0);
 
 //        TextView textView = hView.findViewById(R.id.textView);
 //        textView.setText(firebaseAuth.getCurrentUser().getEmail());
-
+        TextView textView = hView.findViewById(R.id.textView);
+        textView.setText(firebaseAuth.getCurrentUser().getEmail());
         recyclerView = findViewById(R.id.activity_home_medicine_list_rv);
 
 
@@ -119,7 +121,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.profile) {
+            final Intent gotoProfile = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(gotoProfile);
             return true;
         }
 

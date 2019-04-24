@@ -22,7 +22,7 @@
         <item
             android:id="@+id/nav_patient_lab_report"
             android:icon="@drawable/icon_prescription"
-            android:title="View Lab Repor" />
+            android:title="View Lab Report" />
 
         <item
             android:id="@+id/nav_patient_medical"

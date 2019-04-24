@@ -10,29 +10,24 @@
         android:orientation="vertical"
         tools:context=".SignupActivity">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:contentDescription="@null"
-            android:padding="30dp"
-            android:src="@drawable/laboratory" />
-
         <EditText
-            android:id="@+id/activity_signup_name_ed"
+            android:id="@+id/activity_profile_name_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/name" />
 
         <EditText
-            android:id="@+id/activity_signup_email_ed"
+            android:enabled="false"
+            android:id="@+id/activity_profile_email_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/email" />
 
         <EditText
-            android:id="@+id/activity_signup_password_ed"
+            android:enabled="false"
+            android:id="@+id/activity_profile_password_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -40,7 +35,7 @@
             android:inputType="numberPassword" />
 
         <EditText
-            android:id="@+id/activity_signup_mobile_ed"
+            android:id="@+id/activity_profile_mobile_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -49,14 +44,14 @@
 
 
         <EditText
-            android:id="@+id/activity_signup_address_ed"
+            android:id="@+id/activity_profile_address_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/address" />
 
         <EditText
-            android:id="@+id/activity_signup_license_ed"
+            android:id="@+id/activity_profile_license_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -64,28 +59,22 @@
 
 
         <EditText
-            android:id="@+id/activity_signup_types_stock_ed"
+            android:id="@+id/activity_profile_types_stock_ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="@string/types" />
 
         <Button
-            android:id="@+id/activity_signup_signup_btn"
+            android:id="@+id/activity_profile_signup_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@color/colorPrimary"
             android:text="@string/signup"
-            android:textColor="#fff" />
+            android:textColor="@color/colorWhite" />
 
-        <TextView
-            android:id="@+id/activity_signup_old_user_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="@string/old_user"
-            android:textColor="@color/colorAccent" />
+
 
     </LinearLayout>
 

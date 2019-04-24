@@ -190,6 +190,7 @@ public class SendMedicineRequestActivity extends AppCompatActivity implements Vi
                                 progressDialog.dismiss();
                             } else {
                                 Toast.makeText(SendMedicineRequestActivity.this, "Prescirption upload", Toast.LENGTH_SHORT).show();
+                                finish();
                                 progressDialog.dismiss();
                             }
                         }
